@@ -62,7 +62,7 @@
                 } else {
                     selectedGenre = selectedGenre.filter((el) => el !== selectedSlug);
                 }
-                if (selectedGenre.length ==  '{{env('MAX_USER_GENRE_COUNT')}}') {
+                if (selectedGenre.length ==  '{{config('app.settings.app_max_genre_count')}}') {
                     $('.single-genre').not('.single-genre.active').addClass('disabled');
                 } else {
                     $('.single-genre').removeClass('disabled');

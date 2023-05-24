@@ -15,8 +15,8 @@ class FrontGenreRequest extends FormRequest {
     public function rules(): array
     {
         /* TODO: Change max and min genre count from config or setting */
-        $maxGenreCount = env('MAX_USER_GENRE_COUNT');
-        $minGenreCount = env('MIN_USER_GENRE_COUNT');
+        $maxGenreCount = config('app.settings.app_max_genre_count');
+        $minGenreCount = config('app.settings.app_min_genre_count');
 
         return [
             'genres'   => ['required', 'array', "min:$minGenreCount", "max:$maxGenreCount"],

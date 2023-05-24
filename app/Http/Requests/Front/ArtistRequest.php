@@ -46,7 +46,7 @@ class ArtistRequest extends FormRequest
                'phone'             => ['nullable', 'numeric', 'digits:10'],
                'charge_amount'     => ['required', 'numeric'],
                'thumbnail'         => ['required', 'mimes:jepg,png,jpg', 'max:5120'],
-               'intro_video'       => ['required', 'max:30720', 'mimes:mp4,mkv,quicktime,mov'],
+               'intro_video'       => ['nullable', 'max:30720', 'mimes:mp4,mkv,quicktime,mov'],
           ];
      }
 

@@ -201,10 +201,9 @@
                             </div>
                         </div>
                         <h5 class="mb-5 artist-address text-white">{{ucwords($club->address)}}</h5>
-                        <div class="details">
+                        <div class="details" style="margin-bottom: 40px">
                             <h3>About Club</h3>
-                            <p>
-                                {{$club->description}}
+                                <span style="color: #fff">{!! $club->description !!}</span>
                                 @if(auth()->user()->id === $club->user->id)
                                     <span type="button" class="edit-profile" data-toggle="modal"
                                           data-target="#edit-profile">
@@ -215,7 +214,6 @@
                                         </svg>
                                     </span>
                                 @endif
-                            </p>
                         </div>
                         <h4 class="band-name"><span>Club Owner:</span> {{$club->user->first_name}} {{$club->user->last_name}}</h4>
                         <h4 class="band-name"><span>Established Date:</span> {{\App\Helpers\AppHelper::formatDate($club->established_date, 'd M, Y')}}</h4>

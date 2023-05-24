@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider {
                $notifications = \auth()->user()->unreadNotifications()->get();
                $artists = User::artist()->where('id', '<>', \auth()->user()->id)->limit(7)->get();
               }
-              $events = Event::published()->inRandomOrder()->limit(4)->get();
+              $events = Event::published()->where('event_date','>', now())->inRandomOrder()->limit(4)->get();
               $view->with('NOTIFICATIONS', $notifications);
               $view->with('EVENTS', $events);
               $view->with('ARTISTS', $artists);

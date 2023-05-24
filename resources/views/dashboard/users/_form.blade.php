@@ -282,7 +282,7 @@
                 <!-- TODO: Replace env variable with config or pull it from settings -->
             @foreach($genres as $genre)
                 <div data-val="{{$genre->name}}"
-                     class="single-genre {{in_array($genre->name,$oldGenre) ? 'active'  : ''}}  {{!in_array($genre->name,$oldGenre) && count($oldGenre) == env('MAX_USER_GENRE_COUNT') ? 'disabled' : ''}}"
+                     class="single-genre {{in_array($genre->name,$oldGenre) ? 'active'  : ''}}  {{!in_array($genre->name,$oldGenre) && count($oldGenre) == config('app.settings.app_max_genre_count') ? 'disabled' : ''}}"
                      title="{{$genre->excerpt}}">
                     <span
                         class="inline-block text-gray-800 fw-bold fs-6 lh-1 pointer-events-none overflow-hidden overflow-ellipsis w-full text-center">{{ucwords($genre->name)}}</span>
@@ -357,7 +357,7 @@
                     $(this).find('input:hidden[name="genres[]"]').remove();
                 }
                 /*TODO: Replace env variable with setting or config value */
-                if (selectedGenre.length == '{{env('MAX_USER_GENRE_COUNT')}}') {
+                if (selectedGenre.length == '{{config('app.settings.app_max_genre_count')}}') {
                     $('.single-genre').not('.single-genre.active').addClass('disabled');
                 } else {
                     $('.single-genre').removeClass('disabled');

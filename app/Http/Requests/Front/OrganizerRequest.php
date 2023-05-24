@@ -33,7 +33,7 @@ class OrganizerRequest extends FormRequest
             'club_address'              => ['required', 'string', 'max:191'],
             'description'               => ['required', 'string'],
             'thumbnail'                 => ['required', 'mimes:jepg,png,jpg', 'max:5120'],
-            'intro_video'               => ['required', 'max:30720', 'mimes:mp4,mkv,quicktime,mov'],
+            'intro_video'               => ['nullable', 'max:30720', 'mimes:mp4,mkv,quicktime,mov'],
             'first_name'                => ['required', 'string', 'max:191'],
             'last_name'                 => ['required', 'string', 'max:191'],
             'phone'                     => ['nullable', 'numeric', 'digits:10'],

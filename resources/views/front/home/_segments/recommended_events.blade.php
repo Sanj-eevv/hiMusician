@@ -35,16 +35,9 @@
                                             <p>{!!\Illuminate\Support\Str::limit($event->description, 70, '...')!!}</p>
                                         </div>
                                     </div>
-                                          <?php
 
-                                          ?>
                                     <div class="upc-count-wrap">
                                         <div class="upc-count-wrap">
-                                            <div class="countdown"
-                                                 data-count-year="{{\Carbon\Carbon::parse($event->event_date)->year}}"
-                                                 data-count-month="{{\Carbon\Carbon::parse($event->event_date)->month}}"
-                                                 data-count-day="{{\Carbon\Carbon::parse($event->event_date)->diffInDays(now())}}">
-                                            </div>
                                             <div class="ticket">
                                                 <a href="{{route('front.event.detail', \Illuminate\Support\Facades\Crypt::encrypt($event->id))}}" class="tic-btn tic-btn-bg">See Details</a>
                                             </div>

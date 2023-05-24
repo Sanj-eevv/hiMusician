@@ -154,7 +154,7 @@
                         <option value="{{$k}}" {{$selected}}>{{ucwords($v)}}</option>
                     @endforeach
                 </select>
-                @error('status')
+                @error('club_id')
                 <span class="invalid-feedback show" role="alert">
                     <strong>{{$message}}</strong>
                 </span>
